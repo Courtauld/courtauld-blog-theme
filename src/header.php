@@ -29,9 +29,17 @@
 		<header class="header">
             <div class="row">
                 <div class="col-xs-offset-1">
-                    <a href="<?php bloginfo('url'); ?>">
-                        <img src="<?php echo esc_url( get_theme_mod( 'courtauld_blogs_logo' ) ); ?>" class="header__logo" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>">
-                    </a>
+                    <?php if ( get_theme_mod( 'courtauld_blogs_logo' ) ) : ?>
+                        <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+                            <img src='<?php echo esc_url( get_theme_mod( 'courtauld_blogs_logo' ) ); ?>' class="header__logo" alt="<?php bloginfo('title'); ?>" title="<?php bloginfo('title'); ?>">
+                        </a>
+                    <?php else : ?>
+                        <h1 class='header__title'>
+                            <a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+                                The Courtauld Institute of Art
+                            </a>
+                        </h1>
+                    <?php endif; ?>
                 </div>
                 <a href="#" class="header__menu-link" <?php if ( is_admin_bar_showing() ) echo 'style="top:initial;"'; ?> >Menu</a>
             </div>

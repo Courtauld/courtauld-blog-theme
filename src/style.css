@@ -190,8 +190,7 @@ h3 {
     font-size: 1.625rem;
 }
 
-small,
-._small {
+small {
     color: #A8B5BD;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -208,7 +207,6 @@ b {
     font-weight: bold;
 }
 
-
 /* extra element styles */
 
 img {
@@ -220,7 +218,6 @@ hr {
     border: solid #ddd 1px;
 }
 
-
 /* Begin BEM Styles */
 
 .header {
@@ -230,6 +227,12 @@ hr {
     z-index: 1;
     background-color: #263744;
     color: #fefefe;
+}
+
+.header__title {
+    font-size:1rem;
+    line-height: 3rem;
+    margin: 0;
 }
 
 .header__logo {
@@ -769,6 +772,11 @@ post__content ol {
         position: static;
         height: auto;
     }
+
+    .header__title {
+        font-size: auto;
+    }
+
     .header__menu {
         border-top: 1px solid #424f58;
         position: static;
