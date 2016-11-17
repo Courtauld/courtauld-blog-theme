@@ -1,0 +1,42 @@
+{
+  "name": "courtauld-blog-theme",
+  "version": "1.0.0",
+  "description": "WordPress theme developed by Jacob Charles Wilson (@jclwilson) for use on the blogs of The Courtauld Institute of Art and The Courtauld Gallery.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -r dist/*",
+    "prebuild": "npm run clean",
+    "build": "npm run build:img && npm run build:php && npm run uglify && npm run build:styles && npm run assets",
+    "postbuild":"cd dist/ && zip -r courtauld-blog-theme.zip .",
+    "prebuild:img": "mkdir dist/img",
+    "build:img": "cp src/img/* dist/img/ & cp src/screenshot.png dist/screenshot.png",
+    "build:php": "cp src/*.php dist/",
+    "preuglify": "mkdir dist/js",
+    "uglify": "uglifyjs src/js/off-canvas.js -m -c -o dist/js/off-canvas.js",
+    "build:styles": "postcss --use autoprefixer -b 'last 2 versions' < src/style.css | cssmin > dist/style.css",
+    "preassets": "mkdir dist/vendor",
+    "assets": "npm run assets:reframe & npm run assets:jquery & npm run assets:flexboxgrid & npm run assets:html5shiv",
+    "preassets:reframe": "mkdir dist/vendor/reframe.js && mkdir dist/vendor/reframe.js/dist",
+    "assets:reframe":"cp src/vendor/reframe.js/dist/reframe.min.js dist/vendor/reframe.js/dist/reframe.min.js",
+    "preassets:jquery": "mkdir dist/vendor/jquery && mkdir dist/vendor/jquery/dist",
+    "assets:jquery":"cp src/vendor/jquery/dist/jquery.min.js dist/vendor/jquery/dist/jquery.min.js",
+    "preassets:flexboxgrid": "mkdir dist/vendor/flexboxgrid && mkdir dist/vendor/flexboxgrid/dist",
+    "assets:flexboxgrid":"cp src/vendor/flexboxgrid/dist/flexboxgrid.min.css dist/vendor/flexboxgrid/dist/flexboxgrid.min.css",
+    "preassets:html5shiv": "mkdir dist/vendor/html5shiv && mkdir dist/vendor/html5shiv/dist",
+    "assets:html5shiv":"cp src/vendor/html5shiv/dist/html5shiv.js dist/vendor/html5shiv/dist/html5shiv.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Courtauld/courtauld-blog-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Courtauld/courtauld-blog-theme/issues"
+  },
+  "homepage": "https://github.com/Courtauld/cnourtauld-blog-theme#readme",
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "cssmin": "latest",
+    "postcss-cli": "latest",
+    "uglify-js": "latest"
+  }
+}

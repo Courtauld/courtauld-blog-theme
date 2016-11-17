@@ -1,0 +1,24 @@
+{
+  "name": "wp-blog-theme",
+  "homepage": "https://github.com/Courtauld/wp-blog-theme",
+  "authors": [
+    "Jacob Charles Wilson <jclwilson@users.noreply.github.com>"
+  ],
+  "description": "WordPress theme for the blogs of The Courtauld Institute of Art and The Courtauld Gallery.",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexboxgrid": "^6.3.2",
+    "jquery": "^3.1.0",
+    "html5shiv": "^3.7.3",
+    "reframe.js": "^0.3.5"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,860 @@
+/*!
+Theme Name: Courtauld Blogs
+Theme URI: https://github.com/Courtauld/courtauld-blog-theme
+Author: Jacob Charles Wilson
+Author URI: jacobcharleswilson.com
+Description: WordPress theme developed by Jacob Charles Wilson (@jclwilson) for use on the blogs of The Courtauld Institute of Art and The Courtauld Gallery. This theme approximates the bespoke theme developed by Eva Bensasson and AD (formerly Alienation Dev) for courtauld.ac.uk
+Version: 1.0
+Text Domain: courtauldblogs
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    font: inherit;
+    color: inherit;
+    vertical-align: baseline;
+    font-family: 'Helvetica', 'Arial', 'sans-serif';
+    line-height: 1.6;
+    height: inherit;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0.5rem;
+}
+
+
+/* Begin BEM CSS */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: #263744;
+    background: #fefefe;
+}
+
+a {
+    text-decoration: none;
+}
+
+.post__title a:hover,
+.sidebar a {
+    text-shadow: 0.1em 0.1em 0 #fefefe, -0.1em 0.1em 0 #fefefe, 0.1em 0 0 #fefefe, -0.1em 0 0 #fefefe, 0 0.1em 0 #fefefe, 0 -0.1em 0 #fefefe;
+    box-shadow: inset 0 -0.1em 0 0 #263744, inset 0 -0.1em 0 0 #263744;
+    transition: box-shadow 0.2s ease;
+}
+
+.meta a,
+.post__content a {
+    color: #6ebec4;
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-bottom: 1.6rem;
+}
+
+h1 {
+    font-size: 2.375rem;
+}
+
+h2 {
+    font-size: 1.875rem;
+}
+
+h3 {
+    font-size: 1.625rem;
+}
+
+small,
+._small {
+    color: #A8B5BD;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+em,
+i,
+cite {
+    font-style: italic;
+}
+
+strong,
+b {
+    font-weight: bold;
+}
+
+
+/* extra element styles */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+hr {
+    border: solid #ddd 1px;
+}
+
+
+/* Begin BEM Styles */
+
+.header {
+    height: 3.2em;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #263744;
+    color: #fefefe;
+}
+
+.header__logo {
+    padding: 0.8rem 0;
+}
+
+.header__menu-link {
+    background-color: #6ebec4;
+    color: #fefefe;
+    padding: 0.8rem;
+    position: fixed;
+    right: 0;
+    text-decoration: none;
+    top: 0;
+}
+
+
+/* Navigation */
+
+.header__menu {
+    width: 40%;
+    position: absolute;
+    right: -40%;
+    transition: right 0.5s ease;
+    z-index: 1;
+}
+
+.active {
+    right: 0;
+    transition: right 0.5s ease;
+}
+
+.header__menu-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__menu-ul li {
+    background: #263744;
+    border-top: 1px solid #424f58;
+    flex: 1;
+}
+
+.header__menu-ul li a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header__menu ul li a:hover {
+    background: #424f58;
+    transition: background 0.5s ease;
+}
+
+
+/* site-wrapper */
+
+.site-wrapper {
+    position: relative;
+    top: 3.2rem;
+}
+
+
+/* Banner */
+
+.banner {
+    min-height: 15em;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    padding: 1.6rem 0;
+}
+
+.banner__title,
+.banner__desc {
+    margin-bottom: 0;
+}
+
+
+/* Page Wrapper */
+
+.page-wrapper {
+    margin: 3.2rem 0;
+}
+
+
+/* Post styles */
+
+.post {
+    border-bottom: solid #ddd 1px;
+    margin-bottom: 3.2rem;
+}
+
+
+/* dates, author, tags,
+categories */
+
+.meta {
+    color: #A8B5BD;
+    font-size: 0.75rem;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+}
+
+.meta__title {
+    font-size: inherit;
+    margin-bottom: 0;
+}
+
+.meta__title:after {
+    content: ':'
+}
+
+.meta__list,
+.post-categories,
+.policies__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.meta__list li:not(:first-child):before,
+.post-categories li:not(:first-child):before,
+.policies__list li:not(:first-child):before {
+    content: "|";
+    margin: 0 0.5rem;
+}
+
+.meta a {
+    color: #6ebec4;
+}
+
+
+/* section storing post content */
+
+.post__content {
+    margin-bottom: 3.2rem;
+}
+
+.post__content * {
+    line-height: calc(1.4em + (1.8 - 1.4) * ((100vw - 20em) / (80 - 20)));
+}
+
+.post__content p,
+post__content ul {
+    font-size: calc(1em + (1.1 - 1) * ((100vw - 20em) / (80 - 20)));
+}
+
+.post__content p {
+    text-align: justify;
+}
+
+.post__content ul,
+post__content ol {
+    margin-left: 1.6rem;
+}
+
+.post__content ul {
+    list-style-type: disc;
+}
+
+.post__content ol {
+    list-style-type: decimal;
+}
+
+.post__content>ul,
+.post__content>ol {
+    margin-bottom: 1.6rem;
+}
+
+.post__content blockquote {
+    margin-left: 3.2rem;
+}
+
+
+/* Post images */
+
+.post__lead {
+    margin-bottom: 1.6rem;
+}
+
+.image img {
+    width: 100%;
+}
+
+.wp-post-image {
+    display: block;
+    margin: 0 auto;
+}
+
+.image__caption,
+.wp-caption-text {
+    background: #263744;
+    color: #fefefe;
+    font-style: italic;
+    font-size: 0.8rem;
+    padding: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+
+.alignnone,
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignleft {
+    float: left;
+    max-width: 25%;
+    margin-right: 5%;
+}
+
+.alignright {
+    float: right;
+    max-width: 25%;
+    margin-left: 5%;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.gallery .gallery-item {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+.gallery-columns-1 .gallery-item {
+    min-width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    min-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+    min-width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+    min-width: 25%;
+}
+
+
+/* clearfix hack for images */
+
+.alignleft:after,
+.alignright:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: "hello";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+
+/* start commented backslash hack \*/
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+
+/* close commented backslash hack */
+
+
+/* Footer */
+
+.post__footer {
+    margin-bottom: 1.6rem;
+}
+
+
+/* Pagination */
+
+.pagination {
+    height: 4.8rem;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Content Box */
+
+.content-box {
+    margin-top: 1.6rem;
+    margin-bottom: 3.2rem;
+    clear: both;
+}
+
+.content-box__item {
+    margin-bottom: 1.6rem;
+}
+
+.content-box__wrapper {
+    display: flex;
+    background-color: #263744;
+    color: #fefefe;
+}
+
+.content-box__wrapper--wide {
+    flex-direction: column;
+}
+
+.content-box__image {
+    flex: 1;
+}
+
+.content-box__image img {
+    max-height: 15rem;
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-box__wrapper--wide .content-box__image img {
+    max-height: 100%;
+}
+
+.content-box__text {
+    flex: 1;
+    padding: 1.6rem;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    padding-top: 3.2rem;
+}
+
+.widget {
+    margin-bottom: 3.2rem;
+}
+
+
+/* Search */
+
+.search-form {
+    display: flex;
+}
+
+.search-label {
+    min-width: 70%;
+}
+
+.search-field {
+    height: 3.2rem;
+    border: none;
+    border-bottom: 1px solid #6ebec4;
+    padding: 0.8rem;
+    flex: 1;
+    width: 100%;
+}
+
+.search-submit {
+    background: #6ebec4;
+    height: 3.2rem;
+    border: none;
+    color: #fefefe;
+    flex: 1;
+}
+
+
+/* Footer */
+
+.footer {
+    background-color: #263744;
+    color: #fefefe;
+    padding: 3.2rem 0 1.6rem 0;
+}
+
+.address {
+    margin-bottom: 1.6rem;
+}
+
+.address__title {
+    font-size: 1rem;
+    color: #fefefe;
+}
+
+.address__line {
+    line-height: 1.
+}
+
+.footer__menu {
+    margin-bottom: 1.6rem;
+}
+
+.title__footer {
+    font-size: 1rem;
+    color: #fefefe;
+}
+
+.footer__menu-ul>li {
+    margin-bottom: 1.6rem;
+    width: 50%;
+}
+
+.footer__menu-ul>li>a {
+    font-size: 1rem;
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.footer__menu .sub-menu li a {
+    font-size: 0.75rem;
+    color: #A8B5BD;
+    text-transform: uppercase;
+}
+
+.partners {
+    margin-bottom: 1.6rem;
+}
+
+.copyright {
+    margin-bottom: 1.6rem;
+}
+
+.button a {
+    padding: 1.6rem;
+    background: #6ebec4;
+    color: #fefefe;
+    text-decoration: none;
+}
+
+
+/* Wordpress Specific styles */
+
+
+/* Latest Tweets styles */
+
+.latest-tweets ul {
+    margin: 0;
+}
+
+.latest-tweets ul li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+}
+
+.tweet-text {
+    display: inline;
+}
+
+.tweet-text:before {
+    content: '\201C';
+}
+
+.tweet-text:after {
+    content: '\201D';
+}
+
+.tweet-details {
+    display: inline;
+}
+
+.tweet-details:before {
+    content: ' — '
+}
+
+
+/* wp-calendar */
+
+#wp-calendar {
+    max-width: 20rem;
+    border-collapse: collapse;
+}
+
+#wp-calendar caption {
+    font-size: 1.875rem;
+    padding-bottom: 1.6rem;
+    text-align: left;
+}
+
+#wp-calendar thead,
+#wp-calendar tbody td:not(.pad):hover {
+    background: #424f58;
+    color: #fefefe;
+}
+
+#wp-calendar th,
+#wp-calendar tfoot td,
+#wp-calendar tbody td {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    border-spacing: 0.5rem;
+}
+
+#wp-calendar tbody td:not(.pad):hover {
+    cursor: pointer;
+}
+
+#wp-calendar tbody td a {
+    font-weight: 700;
+}
+
+
+/* sidebar pages */
+
+.sidebar ul {
+    list-style-type: disc;
+    margin-left: 1rem
+}
+
+
+/* Media Queries */
+
+@media (min-width:48rem) {
+    /* Content Box */
+    .content-box__wrapper .content-box__wrapper--wide {
+        flex-direction: row;
+    }
+    .content-box__wrapper .content-box__wrapper--wide .content-box__image>img {
+        height: 100%;
+        max-height: 100%;
+    }
+}
+
+@media (min-width:64rem) {
+    /* For the off-canvas Navgiation */
+    .header {
+        position: static;
+        height: auto;
+    }
+    .header__menu {
+        border-top: 1px solid #424f58;
+        position: static;
+        width: 100%;
+    }
+    .header__menu-ul {
+        flex-direction: row;
+    }
+    .header__menu-ul li {
+        border-top: none;
+    }
+    .header__menu ul li:not(:last-child) {
+        border-right: 1px solid #424f58;
+    }
+    .header__menu-link {
+        display: none;
+    }
+    .site-wrapper {
+        position: static;
+    }
+    .main {
+        border-right: solid #ddd 1px;
+        padding-right: 8.3% !important;
+    }
+    .sidebar {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+@media (min-width:72rem) {
+    .footer__menu-ul>li {
+        max-width: 33%;
+    }
+}
+
+/* Print Styles */
+/* These styles are for when printing to paper or to PDF */
+@media print {
+    @page {
+        margin: 2.54cm;
+    }
+    html,
+    body {
+        background: white;
+        color: black;
+    }
+    .header,
+    .banner,
+    .sidebar,
+    .footer,
+    .post-meta {
+        display: none;
+    }
+    article {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    ul,
+    img {
+        page-break-inside: avoid;
+    }
+    /* Show external absolute links, hide internal relative links
+    article a {
+        text-decoration: underline;
+    }
+    article a[href^=http]:after {
+        content:" (" attr(href) ") ";
+    }
+	BUT we will hide the links around images
+	article a[href^="#"]:after {
+        content: "";
+    }
+    img > $a:after {
+        content: "";
+    }
+	*/
+}
+
+/* Important bug fixes */
+
+.mejs-clear {display: none;} /* mejs classes are used by some scripts bundled into wordpress core to control the media player. This clear interferes with the reframe.js required by this theme. Hiding this clear prevents it from causing problems. */
+
+.row {margin-left: 0; margin-right:0;} /* The current version of flexboxgrid has a bug affecting the row margins, this will remove it. */
