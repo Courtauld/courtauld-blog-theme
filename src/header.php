@@ -5,7 +5,19 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title></title>
+        <title>
+            <?php if (function_exists('is_tag') && is_tag()) {
+                echo 'Tag Archive for &quot;'.$tag.'&quot; - ';
+            } elseif (is_archive()) {
+                wp_title(''); echo ' Archive - ';
+            } elseif (is_search()) {
+                echo 'Search for &quot;'.wp_specialchars($s).'&quot; - ';
+            } elseif (!(is_404()) && (is_single()) || (is_page())) {
+                wp_title(''); echo ' - ';
+            } elseif (is_404()) {
+                echo 'Not Found - ';
+            } bloginfo('name'); ?>
+        </title>
         <base href="<?php bloginfo('url'); ?>">
         <meta name="description" content="<?php bloginfo('description'); ?>">
 
