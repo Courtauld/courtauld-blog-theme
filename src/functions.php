@@ -1,8 +1,6 @@
 <?php
 
 // THEME CUSTOMISERS
-
-// Allow the Theme Customiser to change the logo
 function courtauld_blogs_theme_customizer( $wp_customize ) {
 
     // Remove customizer sections
