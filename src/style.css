@@ -311,6 +311,7 @@ hr {
     margin-bottom: 0;
 }
 
+.banner__title {font-size: 3rem;}
 
 /* Page Wrapper */
 
@@ -377,7 +378,7 @@ categories */
 }
 
 .post__content p,
-post__content ul {
+post__content ul, .banner__desc {
     font-size: calc(1em + (1.1 - 1) * ((100vw - 20em) / (80 - 20)));
 }
 
