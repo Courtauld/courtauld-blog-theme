@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "WordPress theme developed by Jacob Charles Wilson (@jclwilson) for use on the blogs of The Courtauld Institute of Art and The Courtauld Gallery.",
   "scripts": {
+    "preinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -r dist/*",
     "prebuild": "npm run clean",
@@ -15,7 +16,7 @@
     "uglify": "uglifyjs src/js/off-canvas.js -m -c -o dist/js/off-canvas.js",
     "build:styles": "postcss --use autoprefixer -b 'last 2 versions' < src/style.css | cssmin > dist/style.css",
     "preassets": "mkdir dist/vendor",
-    "assets": "npm run assets:reframe & npm run assets:jquery & npm run assets:flexboxgrid & npm run assets:html5shiv",
+    "assets": "npm run assets:reframe && npm run assets:jquery && npm run assets:flexboxgrid && npm run assets:html5shiv",
     "preassets:reframe": "mkdir dist/vendor/reframe.js && mkdir dist/vendor/reframe.js/dist",
     "assets:reframe":"cp src/vendor/reframe.js/dist/reframe.min.js dist/vendor/reframe.js/dist/reframe.min.js",
     "preassets:jquery": "mkdir dist/vendor/jquery && mkdir dist/vendor/jquery/dist",

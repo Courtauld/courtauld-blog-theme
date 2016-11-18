@@ -12,13 +12,13 @@ This theme approximates the bespoke theme developed by Eva Bensasson and AD (for
 
 ## Building
 
-Ensure you have both **npm** and **bower** installed to build this project.
+Ensure you have both **npm** and **Bower** installed to build this project.
 
 1. Clone the project
   - ``git clone http://github.com/courtauld/courtauld-blog-theme.git``
 2. In a terminal in the **courtauld-blog-theme** folder run,
-  1. ``bower install``
-  2. ``npm install``
+  1. ``npm install``
+  - This will install both **Bower** assets and **npm** assets.
 3. To build a distribution-ready **courtauld-blog-theme.zip** file run,
   - ``npm run build``
 4. The **courtauld-blog-theme.zip** file is now in **dist/** folder.
