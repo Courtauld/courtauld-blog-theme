@@ -201,7 +201,7 @@ add_filter( 'wpseo_metabox_prio', function() { return 'low';});
 
 //Change Excerpt Read More
 function new_excerpt_more( $more ) {
-	return '<a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read the full post here', 'your-text-domain' ) . '</a>';
+	return '<p><a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read the full post here', 'your-text-domain' ) . '</a><p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
