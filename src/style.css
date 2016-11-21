@@ -8,92 +8,13 @@ Version: 1.0
 Text Domain: courtauldblogs
 */
 
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -109,22 +30,12 @@ video {
 
 /* HTML5 display-role reset for older browsers */
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
+    max-width: 100%;
 }
 
-ol,
-ul {
+ol, ul {
     list-style: none;
 }
 
@@ -140,9 +51,7 @@ html {
     box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
+*, *:before, *:after {
     box-sizing: inherit;
 }
 
@@ -155,26 +64,18 @@ a {
     text-decoration: none;
 }
 
-.post__title a:hover,
-.sidebar a {
+.post__title a:hover, .sidebar a {
     text-shadow: 0.1em 0.1em 0 #fefefe, -0.1em 0.1em 0 #fefefe, 0.1em 0 0 #fefefe, -0.1em 0 0 #fefefe, 0 0.1em 0 #fefefe, 0 -0.1em 0 #fefefe;
     box-shadow: inset 0 -0.1em 0 0 #263744, inset 0 -0.1em 0 0 #263744;
     transition: box-shadow 0.2s ease;
 }
 
-.meta a,
-.post__content a {
+.meta a, .post__content a {
     color: #6ebec4;
     text-decoration: underline;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 1.6rem;
 }
 
@@ -196,16 +97,14 @@ small {
     text-transform: uppercase;
 }
 
-em,
-i,
-cite {
+em, i, cite {
     font-style: italic;
 }
 
-strong,
-b {
+strong, b {
     font-weight: bold;
 }
+
 
 /* extra element styles */
 
@@ -217,6 +116,7 @@ img {
 hr {
     border: solid #ddd 1px;
 }
+
 
 /* Begin BEM Styles */
 
@@ -230,7 +130,7 @@ hr {
 }
 
 .header__title {
-    font-size:1rem;
+    font-size: 1rem;
     line-height: 3rem;
     margin: 0;
 }
@@ -306,12 +206,14 @@ hr {
     padding: 1.6rem 0;
 }
 
-.banner__title,
-.banner__desc {
+.banner__title, .banner__desc {
     margin-bottom: 0;
 }
 
-.banner__title {font-size: 3rem;}
+.banner__title {
+    font-size: 3rem;
+}
+
 
 /* Page Wrapper */
 
@@ -347,17 +249,13 @@ categories */
     content: ':'
 }
 
-.meta__list,
-.post-categories,
-.policies__list {
+.meta__list, .post-categories, .policies__list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.meta__list li:not(:first-child):before,
-.post-categories li:not(:first-child):before,
-.policies__list li:not(:first-child):before {
+.meta__list li:not(:first-child):before, .post-categories li:not(:first-child):before, .policies__list li:not(:first-child):before {
     content: "|";
     margin: 0 0.5rem;
 }
@@ -377,8 +275,7 @@ categories */
     line-height: calc(1.4em + (1.8 - 1.4) * ((100vw - 20em) / (80 - 20)));
 }
 
-.post__content p,
-post__content ul, .banner__desc {
+.post__content p, post__content ul, .banner__desc {
     font-size: calc(1em + (1.1 - 1) * ((100vw - 20em) / (80 - 20)));
 }
 
@@ -386,8 +283,7 @@ post__content ul, .banner__desc {
     text-align: justify;
 }
 
-.post__content ul,
-post__content ol {
+.post__content ul, post__content ol {
     margin-left: 1.6rem;
 }
 
@@ -399,8 +295,7 @@ post__content ol {
     list-style-type: decimal;
 }
 
-.post__content>ul,
-.post__content>ol {
+.post__content>ul, .post__content>ol {
     margin-bottom: 1.6rem;
 }
 
@@ -424,8 +319,7 @@ post__content ol {
     margin: 0 auto;
 }
 
-.image__caption,
-.wp-caption-text {
+.image__caption, .wp-caption-text {
     background: #263744;
     color: #fefefe;
     font-style: italic;
@@ -434,8 +328,7 @@ post__content ol {
     margin-bottom: 1.6rem;
 }
 
-.alignnone,
-.aligncenter {
+.alignnone, .aligncenter {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -483,8 +376,7 @@ post__content ol {
 
 /* clearfix hack for images */
 
-.alignleft:after,
-.alignright:after {
+.alignleft:after, .alignright:after {
     visibility: hidden;
     display: block;
     font-size: 0;
@@ -721,15 +613,12 @@ post__content ol {
     text-align: left;
 }
 
-#wp-calendar thead,
-#wp-calendar tbody td:not(.pad):hover {
+#wp-calendar thead, #wp-calendar tbody td:not(.pad):hover {
     background: #424f58;
     color: #fefefe;
 }
 
-#wp-calendar th,
-#wp-calendar tfoot td,
-#wp-calendar tbody td {
+#wp-calendar th, #wp-calendar tfoot td, #wp-calendar tbody td {
     padding: 0.5rem;
     margin: 0.5rem;
     text-align: center;
@@ -772,11 +661,9 @@ post__content ol {
         position: static;
         height: auto;
     }
-
     .header__title {
         font-size: auto;
     }
-
     .header__menu {
         border-top: 1px solid #424f58;
         position: static;
@@ -813,22 +700,21 @@ post__content ol {
     }
 }
 
+
 /* Print Styles */
+
+
 /* These styles are for when printing to paper or to PDF */
+
 @media print {
     @page {
         margin: 2.54cm;
     }
-    html,
-    body {
+    html, body {
         background: white;
         color: black;
     }
-    .header,
-    .banner,
-    .sidebar,
-    .footer,
-    .post-meta {
+    .header, .banner, .sidebar, .footer, .post-meta {
         display: none;
     }
     article {
@@ -836,12 +722,10 @@ post__content ol {
         margin: 0;
         padding: 0;
     }
-    h2,
-    h3 {
+    h2, h3 {
         page-break-after: avoid;
     }
-    ul,
-    img {
+    ul, img {
         page-break-inside: avoid;
     }
     /* Show external absolute links, hide internal relative links
@@ -861,8 +745,20 @@ post__content ol {
 	*/
 }
 
+
 /* Important bug fixes */
 
-.mejs-clear {display: none;} /* mejs classes are used by some scripts bundled into wordpress core to control the media player. This clear interferes with the reframe.js required by this theme. Hiding this clear prevents it from causing problems. */
+.mejs-clear {
+    display: none;
+}
 
-.row {margin-left: 0; margin-right:0;} /* The current version of flexboxgrid has a bug affecting the row margins, this will remove it. */
+
+/* mejs classes are used by some scripts bundled into wordpress core to control the media player. This clear interferes with the reframe.js required by this theme. Hiding this clear prevents it from causing problems. */
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+/* The current version of flexboxgrid has a bug affecting the row margins, this will remove it. */
