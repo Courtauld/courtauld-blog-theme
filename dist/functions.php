@@ -60,10 +60,6 @@ add_theme_support( 'html5', array(
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 200, 200, array( 'center', 'center') ); // default Post Thumbnail dimensions (cropped)
-
-    // additional image sizes
-    // delete the next line if you do not need additional image sizes
-    // add_image_size( 'lead-image', 700, 9999 ); //300 pixels wide (and unlimited height)
 }
 
 // Register menus for the theme
@@ -201,7 +197,7 @@ add_filter( 'wpseo_metabox_prio', function() { return 'low';});
 
 //Change Excerpt Read More
 function new_excerpt_more( $more ) {
-	return '<a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read the full post here', 'your-text-domain' ) . '</a>';
+	return '<p><a class="read-more" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read the full post here', 'your-text-domain' ) . '</a><p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
