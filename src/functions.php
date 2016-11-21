@@ -60,10 +60,6 @@ add_theme_support( 'html5', array(
 if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 200, 200, array( 'center', 'center') ); // default Post Thumbnail dimensions (cropped)
-
-    // additional image sizes
-    // delete the next line if you do not need additional image sizes
-    // add_image_size( 'lead-image', 700, 9999 ); //300 pixels wide (and unlimited height)
 }
 
 // Register menus for the theme
