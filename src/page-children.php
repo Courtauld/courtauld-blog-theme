@@ -7,7 +7,7 @@ $args = array (
 	'post_status' => 'publish'
 );
 // The Query
-$query = new WP_Query( $args );
+$child_query = new WP_Query( $args );
 
 if ( $child_query->have_posts() ) : ?>
 	<aside class="content-box">
